@@ -381,6 +381,35 @@ top: 2.5rem;
     background-color: #3057D5;
 }
 
+
+/* Process Analysis */
+
+.process-analysis img {
+    width: 100%;
+}
+
+iframe {
+    width: 40rem;
+    height: 22.5rem;
+}
+
+/* Bio styling */
+
+#bio-wrapper p span {
+    font-weight: 800;
+}
+
+#bio-wrapper .in-text-link {
+    display: block;
+    width: fit-content;
+    margin: 2rem 0;
+}
+
+#process-analysis-2-wrapper img {
+    width: 75%;
+}
+
+
 /* Citations styling */
 
 #citations p {
