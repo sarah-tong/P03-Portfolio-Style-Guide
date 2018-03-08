@@ -4,10 +4,9 @@ Default styling for the style guide
 */
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-    padding: 2rem;
-    background-color: #eaf1f7;
-
+    font-family: 'Roboto', sans-serif;
+    padding: 0 2rem;
+    background-color: white;
 }
 
 section:not([id]) {
@@ -47,42 +46,62 @@ INTERACTIVE ELEMENTS -------------------
 /* Styling for in-text link */
 
 .in-text-link {
+    position: relative;
+    font-size: 0.875rem;
     text-decoration: none;
-    color: #3057D5;
+    color: #EF6362;
     transition: color 0.5s;
 }
 
-.in-text-link:hover {
-    color: #899da3;
-    font-weight: 700;
+.in-text-link:after {
+    position: absolute;
+    z-index: -1;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #EF6362;
+    transition: all 250ms;
 }
 
+.in-text-link:hover {
+    color: white;
+}
+
+.in-text-link:hover:after {
+    height: 160%;
+    width: 113%;
+}
 
 /* Styling for the navigation button */
 
 nav ul {
-    margin: 0 1rem;
+    /*    margin: 0 1rem;*/
     padding: 0;
 }
 
 nav li {
-    display: inline-block;
+    display: block;
     margin: 0;
-    background: #3057D5;
-    padding: 1rem;
+    padding: 1rem 1rem 0.25rem 0;
 }
 
 .button-nav {
-    display: inline-block;
     position: relative;
-    font-weight: 700;
     letter-spacing: 0.0625rem;
     text-align: center;
     text-decoration: none;
-    color: white;
+    font-size: 0.75rem;
+    color: #EF6362;
     -webkit-transition: background-color 0.5s;
     transition: background-color 0.5s;
-    padding: 0;
+    text-transform: uppercase;
+}
+
+.button-nav:hover {
+    font-weight: 800;
 }
 
 .button-nav:hover:before {
@@ -91,65 +110,7 @@ nav li {
     width: 100%;
     left: 0;
     bottom: -0.25rem;
-    border-bottom: 2px solid white;
-}
-
-/* Styling for Product Information Accordian */
-
-code span {
-    display: block;
-    height: 1rem;
-}
-
-.product-info-accordion {
-    background-color: #4B83AD;
-    color: white;
-    cursor: pointer;
-    height: 2.75rem;
-    padding: 1rem;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1rem;
-    text-transform: uppercase;
-    transition: color 0.75s, background-color 0.75s;
-}
-
-.active,
-.product-info-accordion:hover {
-    background-color: #3057D5;
-}
-
-.product-info-accordion:after {
-    content: '\002B';
-    color: white;
-    font-weight: bold;
-    float: right;
-}
-
-.active:after {
-    content: "\2212";
-}
-
-.product-info-panel {
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
-
-.product-info-panel p {
-    padding: 1rem 0 1rem 3rem;
-    margin: 0;
-    border-bottom: 1px solid #102c34;
-    display: flex;
-    position: relative;
-}
-
-.product-info-panel p span:last-child{
-    position: absolute;
-    left: 70%;
+    border-bottom: 2px dashed #EF6362;
 }
 
 
@@ -159,45 +120,47 @@ code span {
     position: relative;
     display: inline-block;
     text-decoration: none;
+    font-size: 0.875rem;
     font-weight: 700;
     letter-spacing: 0.0625rem;
     padding: 0.5rem;
-    color: #3057D5;
-    border: 2px solid #3057D5;
+    background: #EF6362;
+    color: white;
 }
 
-.cta-button:after {
+.cta-button:before {
+    content: '';
     position: absolute;
-    content: "";
-    width: 100%;
-    height: 0;
+    border: #EF6362 dashed 2px;
+    top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
-    background: #3057D5;
-    transition: height 0.5s;
+    transition-duration: .3s;
 }
 
-.cta-button:hover {
-    color: #fff;
+.cta-button:hover:before {
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
 }
 
-.cta-button:hover:after {
-    top: 0;
-    height: 100%;
-}
+/*source: https://codepen.io/IanLunn/pen/hysxc*/
+
 
 /* Styling for text input field */
 
 .input-field-label {
     display: block;
+    font-size: 0.875rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
 }
 
 #text-input-field {
     display: block;
-    font-size: 1rem;
+    font-size: 0.875rem;
     padding: 0.15rem;
     border: 1px solid;
     color: #899da3;
@@ -211,24 +174,34 @@ TEXT ELEMENTS -------------------
 /* Styling for heading levels */
 
 h1 {
-    font-size: 4rem;
-    color: #3057D5;
+    font-size: 2rem;
+    color: #EF6362;
+    text-transform: uppercase;
 }
 
 h2 {
-    font-size: 2.75rem;
-    color: #3057D5;
+    font-size: 1.25rem;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 800;
 }
 
 h3 {
-    font-size: 1.75rem;
-    color: #102c34;
+    font-size: 1.15rem;
+    color: black;
     font-weight: 100;
+    font-style: italic;
 }
 
 /* Styling for bulleted lists */
+p {
+    font-size: 0.875rem;
+}
 
-ul {
+/* Styling for lists */
+
+ul, ol {
+    font-size: 0.875rem;
     list-style: square;
     -webkit-padding-start: 1.25rem;
 }
@@ -242,83 +215,117 @@ COMBINED ELEMENTS -------------------
 #main-nav,
 #main-nav ul {
     position: relative;
-    display: inline-flex;
-    width: 100%;
-    height: 5rem;
-    align-items: center;
-    background: #3057D5;
-}
-
-#main-nav li {
-    flex: 1 1 auto;
-    text-align: center;
-}
-
-#main-nav li:nth-child(4) {
-    flex: 50 0 auto;
-    font-size: 1.75rem;
-}
-
-#main-nav nav li:nth-child(4) {
-    border: none;
 }
 
 /* Styling for product listing */
 
-.product-listing {
+.project-listing {
     position: relative;
     display: block;
-    width: 22%;
+    max-width: 15rem;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.product-listing img {
+.project-number {
+    position: absolute;
+    color: black;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 2.69rem 0 0 2.02rem;
+    font-style: normal;
+    top: 0;
+    color: #EF6362;
+}
+
+.line {
+    position: absolute;
+    width: 4.75rem;
+    color: black;
+    border-top: 2px dashed #EF6362;
+    transform: rotate(-90deg);
+    transform-origin: 100% 100%;
+    top: 5.5rem;
+    left: -1.5rem;
+}
+
+.project-name {
+    position: absolute;
+    width: 20rem;
+    color: black;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: right;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    transform-origin: 100% 100%;
+    top: 10.5rem;
+    left: -16.3rem;
+    color: #EF6362;
+}
+
+.project-listing img {
+    height: 115vh;
+    top: 0;
+    transform: translate(-54%, 0%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
     width: 100%;
-    opacity: 0.25;
-    transition: opacity 0.5s;
+    height: 100%;
+    transition: background-color .3s ease-in-out;
+    background-color: rgba(33, 53, 86, 0.8);
 }
 
+.overlay:hover {
+    background-color: transparent;
+}
+/* source: https://codepen.io/leincetta/pen/pJyrpg */
+
+
+/*
 .product-listing img:hover {
-    opacity: 1;
+opacity: 1;
 }
 
 .product-detail {
-    display: inline-flex;
-    width: 100%;
+display: inline-flex;
+width: 100%;
 }
 
 .product-detail h3, .product-detail p {
-    flex: 1 0 auto;
-    color: white;
-    font-weight: 700;
-    position: absolute;
-    left: 0rem;
-    margin: auto;
-    text-align: center;
-    width: max-content;
-    height: fit-content;
-    text-shadow: 2px 2px #102c34;
+flex: 1 0 auto;
+font-weight: 700;
+position: absolute;
+left: 0rem;
+margin: auto;
+text-align: center;
+width: max-content;
+height: fit-content;
 }
 
 .product-detail h3 {
-    top: 0rem;
+top: 0rem;
 }
 
 .product-detail p {
-    top: 2.5rem;
+top: 2.5rem;
 }
+*/
 
 /* Website grid */
 
 .grid-wrapper {
-    display: inline-flex;
+    display: flex;
     width: 100%;
     margin-bottom: 1rem;
-    flex-wrap: wrap;
 }
 
 .column-1-of-4 {
-    flex: 0 1 22%;
-    margin-right: 2rem;
+    flex: 1 1 25%;
 }
 
 .col-1-of-2 {
@@ -328,10 +335,8 @@ COMBINED ELEMENTS -------------------
     margin: 0 2rem
 }
 
-.placeholder {
-    display: block;
-    width: 100%;
-    border: 1px solid black;
+.grid-wrapper .project-listing {
+    max-width: 100%;
 }
 
 
@@ -344,12 +349,16 @@ COMBINED ELEMENTS -------------------
     border: 1px solid #899da3;
 }
 
-#black {
-    background-color: black;
+#coral {
+    background-color: #EF6362;
 }
 
-#super-dark-grey {
-    background-color: #102c34;
+#navy {
+    background-color: #213556;
+}
+
+#black {
+    background-color: black;
 }
 
 #mid-grey {
