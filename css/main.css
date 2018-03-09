@@ -327,13 +327,14 @@ top: 2.5rem;
 
 .column-1-of-4 {
     flex: 1 1 25%;
+    overflow: hidden;
 }
 
-.col-1-of-2 {
-    -webkit-flex: 1 1 40%;
-    -ms-flex: 1 1 40%;
-    flex: 1 1 40%;
-    margin: 0 2rem
+.column-1-of-2 {
+    -webkit-flex: 1 1 50%;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+/*    margin: 0 2rem;*/
 }
 
 .grid-wrapper .project-listing {
@@ -383,7 +384,7 @@ top: 2.5rem;
 }
 
 
-/* Process Analysis */
+/* Process Analysis styling */
 
 .process-analysis img {
     width: 100%;
@@ -408,6 +409,105 @@ iframe {
 
 #process-analysis-2-wrapper img {
     width: 75%;
+}
+
+
+/* Templates styling */
+
+#templates-wrapper .grid-wrapper .project-listing {
+    max-width: 100%;
+}
+
+#templates-wrapper .column-1-of-4:nth-child(2) img {
+    transform: translate(-20%, 0%);
+}
+
+#templates-wrapper .column-1-of-4:nth-child(3) img {
+    transform: translate(-18%, 0%);
+}
+
+#templates-wrapper .column-1-of-4:nth-child(4) {
+    background-color: #4696CC;
+}
+
+#templates-wrapper .column-1-of-4:nth-child(4) img{
+    position: absolute;
+    width: 50%;
+    height: auto;  
+    top: 50%;
+    left: 50%;
+}
+
+#templates-wrapper p span {
+    font-weight: 800;
+}
+
+#templates-wrapper .in-text-link {
+    display: block;
+    width: fit-content;
+    margin: 2rem 0;
+}
+
+#templates-wrapper .cta-button {
+    display: block;
+    width: fit-content;
+    height: auto;
+    margin: 2rem auto;
+}
+
+#templates-wrapper section:nth-of-type(3) h1 {
+    text-align: center;
+}
+
+#templates-wrapper section:nth-of-type(4) h1 {
+    margin: 0;
+    text-align: right;
+}
+
+#templates-wrapper .column-1-of-2:first-child {
+    margin-right: 2rem;
+}
+
+#templates-wrapper section:nth-of-type(4) .in-text-link {
+    position: relative;
+    margin: 2rem 0 2rem auto;
+}
+
+#templates-wrapper section:nth-of-type(5) h1 {
+    text-align: center;
+}
+
+#templates-wrapper section:nth-of-type(5) h2 {
+    margin-top: 0;
+}
+
+#templates-wrapper img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#templates-wrapper section:nth-of-type(6) h1, #templates-wrapper section:nth-of-type(6) h2:nth-of-type(2) {
+    text-align: center;
+}
+
+#templates-wrapper section:nth-of-type(6) h2:nth-of-type(2) {
+    position: relative;
+    background: white;
+    z-index: 9;
+    width: 8rem;
+    margin: 1rem auto;
+}
+
+.divider {
+    display: block;
+    position: relative;
+    top: -1.9rem;
+    border: 1px dashed black;
+    margin: 1rem 6rem;
+}
+
+#templates-wrapper section:nth-of-type(6) p {
+    margin: 1rem 6rem;
 }
 
 
