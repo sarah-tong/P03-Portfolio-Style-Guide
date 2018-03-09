@@ -481,7 +481,7 @@ iframe {
     margin-top: 0;
 }
 
-#templates-wrapper img {
+#templates-wrapper section:not(:first-child) img {
     width: 100%;
     margin-bottom: 1rem;
 }
@@ -502,12 +502,22 @@ iframe {
     display: block;
     position: relative;
     top: -1.9rem;
-    border: 1px dashed black;
+    border: 1px dashed #213556;
     margin: 1rem 6rem;
 }
 
 #templates-wrapper section:nth-of-type(6) p {
     margin: 1rem 6rem;
+}
+
+#templates-wrapper section:nth-of-type(7) h1, #templates-wrapper section:nth-of-type(7) h2:nth-of-type(2) {
+    text-align: center;
+}
+
+#templates-wrapper section:nth-of-type(7) .paragraph-wrapper {
+    margin: 1rem 6rem;
+    padding: 2rem;
+    border: 1px dashed #213556;
 }
 
 
